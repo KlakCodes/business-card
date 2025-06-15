@@ -19,3 +19,7 @@ console.log(greeting);
 
 // document.body.appendChild(image);
 // document.body.appendChild(gif);
+
+const footer = document.querySelector('.footer');
+const currentYear = new Date().getFullYear();
+footer.textContent = `Copyright © ${currentYear} KlakCodes`;
