@@ -2,3 +2,24 @@
 body {
   background-color: rebeccapurple;
 }
+
+.card {
+  width: 321px;
+  height: 208px;
+
+  display: flex;
+  align-items: center;
+
+  background-color: white;
+  border-radius: 15px;
+}
+
+.card-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+}
+
+div, img {
+  border: 1px dashed red;
+}

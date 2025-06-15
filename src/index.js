@@ -5,15 +5,17 @@ import profileGif from "./assets/images/profile-animated.gif"
 
 console.log(greeting);
 
-const image = document.createElement('img');
-image.src = profileImage;
-image.style.width = '300px'
-image.style.borderRadius = '300px'
+// Example code
 
-const gif = document.createElement('img');
-gif.src = profileGif;
-gif.style.width = '300px';
-gif.style.borderRadius = '300px';
+// const image = document.createElement('img');
+// image.src = profileImage;
+// image.style.width = '300px'
+// image.style.borderRadius = '300px'
 
-document.body.appendChild(image);
-document.body.appendChild(gif);
+// const gif = document.createElement('img');
+// gif.src = profileGif;
+// gif.style.width = '300px';
+// gif.style.borderRadius = '300px';
+
+// document.body.appendChild(image);
+// document.body.appendChild(gif);
