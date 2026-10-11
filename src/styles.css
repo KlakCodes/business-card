@@ -24,23 +24,48 @@ body {
   height: 100%;
 }
 
-.card {
-  /* width: 321px;
-  height: 208px; */
+.card-scene {
+  perspective: 1200px;
+}
 
+.card {
   width: 642px;
   height: 416px;
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: grab;
+  user-select: none;
+}
 
+.card.is-snapping {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card.is-dragging {
+  cursor: grabbing;
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
-
   padding: 30px 30px 30px 10px;
   gap: 20px;
-
   background-color: white;
   border-radius: 15px;
-
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a3e 50%, #0f1a2e 100%);
+  color: white;
+  justify-content: center;
+  padding: 40px;
 }
 
 .card-image {
@@ -83,6 +108,10 @@ body {
   background-color: black;
 }
 
+.divider-light {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
 .header,
 .footer {
   align-self: center;
@@ -105,13 +134,62 @@ body {
   margin-bottom: 10px;
 }
 
+/* Back face */
+.card-back-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.card-back-name {
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.back-tagline {
+  font-size: 0.65em;
+  opacity: 0.6;
+  letter-spacing: 1px;
+}
+
+.back-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  font-size: 0.5em;
+  padding: 4px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 20px;
+  opacity: 0.85;
+}
+
+.back-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.55em;
+  opacity: 0.7;
+}
+
 @media (max-width: 768px) {
+  .card-scene {
+    width: calc(100vw - 40px);
+    height: calc(100vh - 120px);
+  }
+
   .card {
     width: 100%;
     height: 100%;
-    flex-direction: column;
-    margin: 20px;
+  }
 
+  .card-face {
+    flex-direction: column;
     justify-content: center;
     padding: 0 10px 30px 10px;
   }
